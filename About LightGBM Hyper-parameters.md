@@ -64,3 +64,31 @@ default는 64 (?)
 * `categorical_feature`: 범주형 feature의 인덱스를 의미. 만약 categorical_features 가 0, 1, 2 이면 column 0, column 1, column 2 가 범주형 변수이다.
 
 * `ignore_column`: 해당 변수들을 무시함
+
+<br/>
+
+## 4. Parameter Tuning
+
+### 4.1 For Model Accuracy
+
+* `num_leaves`: Tree 모델의 복잡성을 컨트롤하는 주요 파라미터. 이상적으로 num_leaves 값은 (max_depth)^2 값보다 적거나 같아야 한다. 이것보다 큰 값은 overfitting을 유발할 것이다.
+
+* `min_data_in_leaf`: 큰 값으로 세팅하는 것은 Tree가 너무 깊게 확장되는 것을 막을 수 있지만 under-fitting이 발생할 수도 있다. 관행적으로 수백 또는 수천 개로 정하는 것이 큰 데이터 세트에 충분하다.
+
+* `max_depth` : Tree 깊이를 명확하게 제한하기 위해 max_depth 값을 설정할 수도 있다.
+
+<br/>
+
+### 4.2 For Better Accuracy
+
+* 큰 `max_bin` 값을 사용
+* 작은 `learning_rate` 값을 큰 `num_iterations` 값과 함께 사용
+* 큰 `num_leaves` 값을 사용
+* `dart` 사용
+
+<br/>
+
+### 4.3 Deal with Over-fitting
+
+
+
